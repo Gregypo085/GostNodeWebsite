@@ -1,0 +1,91 @@
+/* Header with glitch animation */
+.glitch-header {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 5px #00ffff;
+  animation: flicker 2.5s infinite;
+}
+
+.share-tech {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+  color: #00ffff; /* GostNode cyan */
+  text-shadow: 0 0 3px #00ffff;
+}
+
+/* Flicker animation keyframes */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.8; }
+  48% { opacity: 0.6; }
+  50% { opacity: 0.95; }
+  52% { opacity: 0.3; }
+  55% { opacity: 1; }
+}
+
+body {
+  background-color: rgb(0, 0,0);
+}
+
+p.secret-code {
+ color: rgb(0, 0, 0);
+}
+
+p.hard-to-read {
+ color: rgb(26, 24, 24);
+}
+        
+p {
+ color: rgb(47, 255, 248);
+ }
+
+a {
+  margin: 1em auto;
+}
+
+h1 {
+  font-family: VT323;
+}
+
+h2, p {
+  margin: 0.3em auto;
+  text-align: center;
+  font-family: VT323;
+  color: rgb(00, 200, 193);
+}
+
+h3 {
+  margin: 0.3em auto;
+  text-align: center;
+  font-size: 30px;
+  font-family: VT323;
+  color: rgb(00, 200, 193);
+}
+
+img {
+  margin: 2em auto;
+}
+
+button {
+  color: black;
+  background-color: #00ffff;
+  border: none;              /* Remove default border */
+  padding: 10px 20px;        /* Optional: spacing inside button */
+  font-family: VT323;        /* Match your site's aesthetic */
+  font-size: 1.2rem;
+  cursor: pointer;           /* Makes it look clickable */
+  box-shadow: 0 0 10px #00ffff; /* Optional glow effect */
+}
+
+a {
+  color: rgb(00, 200, 193);
+  font-size: 30px;
+  font-family: 'VT323', monospace;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(00, 200, 193);
+  text-shadow: 0 0 10px #ff00ff;
+}
