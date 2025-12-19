@@ -1,4 +1,36 @@
-<audio autoplay loop>
-  <source src="https://www.dropbox.com/scl/fi/y3jrw93vqq0mdvea2vbjz/EDM-Sound-Design-Template-4.wav?rlkey=0qp58i2vh1cnn2kx2kzlm3zcb&st=6svy82t6&raw=1" type="audio/wav" />
-  Your browser does not support the audio element.
-</audio>
+const API_URL = "http://127.0.0.1:8000/signup";
+// later: https://your-api.onrender.com/signup
+
+const form = document.getElementById("signup-form");
+
+if (!form) {
+  console.warn("signup-form not found on page yet");
+} else {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const emailEl = document.getElementById("email");
+    const websiteEl = document.getElementById("website");
+
+    const email = emailEl ? emailEl.value : "";
+    const website = websiteEl ? websiteEl.value : "";
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, website }),
+      });
+
+      if (res.ok) {
+        alert("You're in. Welcome to The Network.");
+        form.reset();
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Network error. Is the API running?");
+    }
+  });
+}

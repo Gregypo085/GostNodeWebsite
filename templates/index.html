@@ -11,27 +11,34 @@
     <script>
         setInterval(() => {
             const img = document.getElementById("flashingImage");
+            if (!img) return;
             img.style.visibility = (img.style.visibility === "hidden") ? "visible" : "hidden";
-        }, 30); // Adjust this value to control the speed (100ms is very fast)
+        }, 30); 
     </script>
   
   <script>
   setInterval(() => {
     const text = document.getElementById("flashingText");
+    if (!text) return;
     text.style.visibility = (text.style.visibility === "hidden") ? "visible" : "hidden";
   }, 300); // 500ms = flash every half second, adjust as needed
 </script>
   
     <title>GostNode.com</title>
-  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <script src="./script.js" defer></script> <!-- Link to external JavaScript file -->
 </head>
 
-<script src="/static/script.js" defer></script> <!-- Link to external JavaScript file -->
-
 <body style="color: rgb(47, 255, 248); text-align: center;">
+
+  <audio autoplay>
+    <source src="https://www.dropbox.com/scl/fi/y3jrw93vqq0mdvea2vbjz/EDM-Sound-Design-Template-4.wav?rlkey=0qp58i2vh1cnn2kx2kzlm3zcb&st=6svy82t6&raw=1" type="audio/wav" />
+  </audio>
+
     <h1 class="glitch-header">GOSTNODE://CONNECTED</h1>
   <h2 class="share-tech">You found it. What you do next is up to you. </h2>
 
@@ -82,11 +89,5 @@ isn't just music, it's a signal. If you've found it, you're one of the few. But 
 
 </body>
   
-
-
-<audio autoplay>
-  <source src="https://www.dropbox.com/scl/fi/y3jrw93vqq0mdvea2vbjz/EDM-Sound-Design-Template-4.wav?rlkey=0qp58i2vh1cnn2kx2kzlm3zcb&st=6svy82t6&raw=1" type="audio/wav" />
-  Your browser does not support the audio element.
-</audio>
   
 </html>
