@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/signup";
+const API_URL = "https://gostnodeapi.onrender.com/signup";
 // later: https://your-api.onrender.com/signup
 
 const form = document.getElementById("signup-form");
