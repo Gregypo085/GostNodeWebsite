@@ -9,20 +9,21 @@
   
       <!-- JavaScript for flickering image -->
     <script>
-        setInterval(() => {
-            const img = document.getElementById("flashingImage");
-            if (!img) return;
-            img.style.visibility = (img.style.visibility === "hidden") ? "visible" : "hidden";
-        }, 30); 
-    </script>
-  
-  <script>
-  setInterval(() => {
-    const text = document.getElementById("flashingText");
-    if (!text) return;
-    text.style.visibility = (text.style.visibility === "hidden") ? "visible" : "hidden";
-  }, 300); // 500ms = flash every half second, adjust as needed
+  document.addEventListener("DOMContentLoaded", () => {
+    setInterval(() => {
+      const img = document.getElementById("flashingImage");
+      if (!img) return;
+      img.style.visibility = (img.style.visibility === "hidden") ? "visible" : "hidden";
+    }, 30);
+
+    setInterval(() => {
+      const text = document.getElementById("flashingText");
+      if (!text) return;
+      text.style.visibility = (text.style.visibility === "hidden") ? "visible" : "hidden";
+    }, 300);
+  });
 </script>
+
   
     <title>GostNode.com</title>
   <link rel="stylesheet" href="./styles.css" />
@@ -33,9 +34,9 @@
   <script src="./script.js" defer></script> <!-- Link to external JavaScript file -->
 </head>
 
-<body style="color: rgb(47, 255, 248); text-align: center;">
+<body class="centered">
 
-  <audio autoplay>
+  <audio autoplay muted loop>
     <source src="https://www.dropbox.com/scl/fi/y3jrw93vqq0mdvea2vbjz/EDM-Sound-Design-Template-4.wav?rlkey=0qp58i2vh1cnn2kx2kzlm3zcb&st=6svy82t6&raw=1" type="audio/wav" />
   </audio>
 
@@ -58,6 +59,25 @@
 
     <!-- Headings -->
     <h3 id="flashingText">The Signal is spreading</h3>
+
+<section class="signup">
+  <h2>Join the list</h2>
+
+  <form id="signupForm">
+    <input
+      id="emailInput"
+      name="email"
+      type="email"
+      placeholder="you@example.com"
+      autocomplete="email"
+      required
+    />
+    <button type="submit">Sign up</button>
+    <p id="signupMsg" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+
     <h2>Join The Network</h2>
 
     <!-- Text -->
@@ -77,13 +97,5 @@
   <p class="secret-code">GostNode is a meeting point for those seeking connection through music, tech, and underground culture. A signal for those moving through shadows, a sound for the unseen. Driven by a belief that freedom of expression is vital in a digital world that often reduces us to static identities. The name GostNode comes from the idea that we are all nodes in a connected system, each one unique, essential, and capable of broadcasting truth. Built on curiosity, discovery, and freedom, it's a signal for those who move against the grain. A transmission to feel, to move, to be. It's about discovering connection in the shared experience. When it reaches you, you're already part of it.
 </p>
 
-
-    <!-- CSS Styles -->
-    <style>
-        
-    </style>
-
 </body>
-  
-  
 </html>

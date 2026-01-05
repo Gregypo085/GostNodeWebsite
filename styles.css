@@ -14,6 +14,12 @@
   text-shadow: 0 0 3px #00ffff;
 }
 
+.centered {
+  color: rgb(47, 255, 248);
+  text-align: center;
+}
+
+
 /* Flicker animation keyframes */
 @keyframes flicker {
   0%, 100% { opacity: 1; }

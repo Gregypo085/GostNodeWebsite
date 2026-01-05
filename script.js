@@ -1,36 +1,38 @@
 const API_URL = "https://gostnodeapi.onrender.com/signup";
-// later: https://your-api.onrender.com/signup
 
-const form = document.getElementById("signup-form");
+const form = document.getElementById("signupForm");
+const emailEl = document.getElementById("emailInput");
+const msgEl = document.getElementById("signupMsg");
 
-if (!form) {
-  console.warn("signup-form not found on page yet");
+if (!form || !emailEl || !msgEl) {
+  console.warn("Signup elements not found:", { form, emailEl, msgEl });
 } else {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const emailEl = document.getElementById("email");
-    const websiteEl = document.getElementById("website");
-
-    const email = emailEl ? emailEl.value : "";
-    const website = websiteEl ? websiteEl.value : "";
+    msgEl.textContent = "Submitting...";
+    const email = emailEl.value.trim();
 
     try {
       const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, website }),
+        body: JSON.stringify({ email }),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
-        alert("You're in. Welcome to The Network.");
+        msgEl.textContent = "You're in. Welcome to The Network.";
         form.reset();
       } else {
-        alert("Something went wrong.");
+        // FastAPI often returns { detail: ... } on errors
+        msgEl.textContent =
+          data?.detail?.[0]?.msg || data?.detail || "Something went wrong.";
       }
     } catch (err) {
       console.error(err);
-      alert("Network error. Is the API running?");
+      msgEl.textContent = "Network error. Please try again.";
     }
   });
 }
