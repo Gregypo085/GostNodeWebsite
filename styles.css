@@ -19,6 +19,16 @@
   text-align: center;
 }
 
+.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup input {
+  margin-bottom: 0.75rem;
+}
+
 
 /* Flicker animation keyframes */
 @keyframes flicker {
