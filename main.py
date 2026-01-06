@@ -117,3 +117,4 @@ def append_email_to_sheet(email: str, created_at: str):
 
 #run fastapi dev main.py
 # control + c to stop server
+# python3 -m http.server 5500
