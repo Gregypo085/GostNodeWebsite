@@ -36,3 +36,30 @@ if (!form || !emailEl || !msgEl) {
     }
   });
 }
+const player = document.getElementById("player");
+const playStopBtn = document.getElementById("playStop");
+const volume = document.getElementById("volume");
+
+if (player && playStopBtn) {
+  playStopBtn.addEventListener("click", async () => {
+    if (player.paused) {
+      await player.play();
+      playStopBtn.textContent = "Stop";
+    } else {
+      player.pause();
+      player.currentTime = 0;
+      playStopBtn.textContent = "Play";
+    }
+  });
+
+  player.addEventListener("ended", () => {
+    playStopBtn.textContent = "Play";
+    player.currentTime = 0;
+  });
+}
+
+if (player && volume) {
+  volume.addEventListener("input", () => {
+    player.volume = Number(volume.value);
+  });
+}
